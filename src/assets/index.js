@@ -3,5 +3,25 @@ import react_logo from "./react_logo.svg";
 import nodejs_logo from "./nodejs_logo.svg";
 import mongodb_logo from "./mongodb_logo.svg";
 import github_octocat from "./github_octocat.svg";
+import linkedin_logo from "./linkedin_logo.svg";
+import gmail_logo from "./gmail_logo.svg";
+import twitter_logo from "./twitter_logo.svg";
+import arrow_right from "./arrow_right.svg";
+import globe from "./globe.svg";
 
-export { express_logo, react_logo, nodejs_logo, mongodb_logo, github_octocat };
+// snaps
+import digifigs_snap from "./snaps/digifigs_snap.png";
+
+export {
+  express_logo,
+  react_logo,
+  nodejs_logo,
+  mongodb_logo,
+  github_octocat,
+  linkedin_logo,
+  gmail_logo,
+  twitter_logo,
+  arrow_right,
+  globe,
+  digifigs_snap,
+};

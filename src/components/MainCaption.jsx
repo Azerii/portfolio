@@ -1,21 +1,33 @@
 import styled, { keyframes } from "styled-components";
 import {
-  express_logo,
   github_octocat,
-  mongodb_logo,
-  nodejs_logo,
-  react_logo,
+  gmail_logo,
+  linkedin_logo,
+  twitter_logo,
 } from "../assets";
 import Container from "./Container";
 
-const colors = [
-  "#2a446b40",
-  "#2a446b20",
-  "#2a446b10",
-  "#2a446b30",
-  "#2a446b40",
-];
+// const colors = [
+//   "#2a446b40",
+//   "#2a446b20",
+//   "#2a446b10",
+//   "#2a446b30",
+//   "#2a446b40",
+// ];
 
+const colors = {
+  github: "#04060A10",
+  twitter: "#52A7E710",
+  linkedin: "#52A7E710",
+  gmail: "#E6433610",
+};
+
+const colors__link = {
+  github: "#04060A50",
+  twitter: "#52A7E750",
+  linkedin: "#52A7E750",
+  gmail: "#E6433650",
+};
 // const colors = [
 //   "#00000050",
 //   "#00000040",
@@ -36,8 +48,33 @@ const Wrapper = styled(Container)`
   padding-left: 14.4rem;
 
   .caption {
+    font-size: 10.8rem;
+    line-height: 12.8rem;
+    // z-index: 2;
+
     .step {
       margin-left: 3ch;
+    }
+  }
+
+  // .subCaption {
+  //   z-index: 2;
+  // }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 2.4rem;
+
+    .caption {
+      font-size: 4.5rem;
+      line-height: 6.9rem;
+    }
+
+    .floatersWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 4.8rem;
     }
   }
 `;
@@ -75,15 +112,35 @@ const Floater = styled.div`
     width: 8rem;
   }
 
-  &:before {
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 3;
+    width: 50%;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease-in-out 0.1s;
+
+    &:hover {
+      background-color: ${(props) =>
+        props.bgIndex !== null
+          ? colors__link[props.bgIndex]
+          : "var(--primary)"};
+    }
+  }
+
+  &::before {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
-    opacity: 0.3;
+    opacity: 0.5;
+    // border-radius: 50%;
     // border: 1px solid var(--primary);
     background-color: ${(props) =>
       props.bgIndex !== null ? colors[props.bgIndex] : "var(--primary)"};
+    z-index: 0;
   }
 
   &.size-1 {
@@ -95,7 +152,7 @@ const Floater = styled.div`
   }
 
   &.size-2 {
-    top: 30%;
+    top: 25%;
     left: -10%;
     width: 60rem;
     height: 60rem;
@@ -103,11 +160,11 @@ const Floater = styled.div`
   }
 
   &.size-3 {
-    top: 20%;
+    top: 40%;
     right: 0;
     width: 40rem;
     height: 40rem;
-    animation-delay: -666ms;
+    animation-delay: -3000ms;
   }
 
   &.size-4 {
@@ -115,7 +172,7 @@ const Floater = styled.div`
     left: 30%;
     width: 30rem;
     height: 30rem;
-    animation-delay: -66ms;
+    animation-delay: -566ms;
   }
 
   &.size-5 {
@@ -125,35 +182,100 @@ const Floater = styled.div`
     height: 20rem;
     border-radius: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    animation: unset;
+    width: 25% !important;
+    margin: 1.2rem 0;
+
+    &.size-1 {
+      width: auto;
+      height: auto;
+      top: unset;
+      right: unset;
+    }
+
+    &.size-2 {
+      width: auto;
+      height: auto;
+      top: unset;
+      bottom: unset;
+      left: unset;
+    }
+
+    &.size-3 {
+      width: auto;
+      height: auto;
+      top: unset;
+      right: unset;
+    }
+
+    &.size-4 {
+      width: auto;
+      height: auto;
+      bottom: unset;
+      left: unset;
+    }
+
+    &.size-5 {
+      width: auto;
+      height: auto;
+      left: unset;
+      top: unset;
+    }
+
+    // &::before {
+    //   display: none;
+    // }
+
+    .icon {
+      height: 3rem;
+      // opacity: 0.5;
+    }
+  }
 `;
 
 export default function MainCaption() {
   return (
-    <Wrapper>
+    <Wrapper className="scrollSnapChild">
       <h4 className="textLargeBold">Odinaka Ezennia</h4>
-      <h1 className="displayLargeBold caption">
-        <span>Full</span>
+      <h1 className="displayLarge caption">
+        <span>Front</span>
         &nbsp;
-        <span>Stack</span>
+        <span>End</span>
         <br />
-        <span className="step">Developer</span>
+        <span className="step">Engineer</span>
       </h1>
 
-      <Floater className="size-1" bgIndex={0}>
-        <img src={react_logo} alt="react" className="icon" />
-      </Floater>
-      <Floater className="size-2" bgIndex={1}>
-        <img src={express_logo} alt="node js" className="icon" />
-      </Floater>
-      <Floater className="size-3" bgIndex={2}>
-        <img src={nodejs_logo} alt="react" className="icon" />
-      </Floater>
-      <Floater className="size-4" bgIndex={3}>
-        <img src={mongodb_logo} alt="react" className="icon" />
-      </Floater>
-      <Floater className="size-5" bgIndex={4}>
-        <img src={github_octocat} alt="react" className="icon" />
-      </Floater>
+      <div className="floatersWrapper">
+        <Floater className="size-1" bgIndex={"github"}>
+          <a href="https://github.com/Azerii" className="link">
+            <img src={github_octocat} alt="github" className="icon" />
+          </a>
+        </Floater>
+        <Floater className="size-2" bgIndex={"linkedin"}>
+          <a
+            href="https://www.linkedin.com/in/odinaka-ezennia-5a4870177/"
+            className="link"
+          >
+            <img src={linkedin_logo} alt="linkedin" className="icon" />
+          </a>
+        </Floater>
+        <Floater className="size-4" bgIndex={"gmail"}>
+          <a href="mailto:ogidi58@gmail.com" className="link">
+            <img src={gmail_logo} alt="gmail" className="icon" />
+          </a>
+        </Floater>
+        <Floater className="size-3" bgIndex={"twitter"}>
+          <a href="/" className="link">
+            <img src={twitter_logo} alt="twitter" className="icon" />
+          </a>
+        </Floater>
+        {/* <Floater className="size-5" bgIndex={4}>
+          <img src={github_octocat} alt="react" className="icon" />
+        </Floater> */}
+      </div>
     </Wrapper>
   );
 }

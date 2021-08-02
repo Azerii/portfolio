@@ -9,7 +9,10 @@ const Wrapper = styled.div`
   z-index: 1;
 `;
 
-const Brand = styled.a``;
+const Brand = styled.a`
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+`;
 
 const Menu = styled.ul`
   display: flex;
@@ -19,19 +22,34 @@ const Menu = styled.ul`
     position: relative;
     padding: 0 16px;
     width: max-content;
+    transition: transform 0.2s ease-out;
 
     a {
       width: max-content;
     }
 
-    &.active::before {
+    &::before {
       content: "";
       position: absolute;
       top: -2px;
       left: 0;
       height: 3px;
-      width: 40%;
+      width: 0;
       background-color: var(--primary);
+      transition: width 0.2s ease-in-out 0.2s;
+    }
+
+    &.active::before,
+    &:hover::before {
+      width: 40%;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+
+      a {
+        color: #deb887;
+      }
     }
   }
 `;
@@ -45,7 +63,7 @@ export default function Navbar() {
         </Brand>
         <Menu>
           <li className="item">
-            <a href="/" className="textRegular">
+            <a href="/#work" className="textRegular">
               Work
             </a>
           </li>
