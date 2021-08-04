@@ -72,6 +72,7 @@ const Wrapper = styled(Container)`
   }
 
   @media screen and (max-width: 768px) {
+    background-color: transparent;
     .mb {
       display: block;
     }
