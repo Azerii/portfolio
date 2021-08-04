@@ -31,6 +31,7 @@ const Wrapper = styled(Container)`
   padding-bottom: 7.2rem;
   background-color: #2a446b05;
   position: relative;
+  overflow: hidden;
 
   .heading {
     width: max-content;
