@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { digifigs_snap } from "../assets";
+import { digifigs_snap, postpaddy_snap } from "../assets";
 import SectionWrapper from "./SectionWrapper";
 
 const steps_1 = [
@@ -9,7 +8,7 @@ const steps_1 = [
   },
   {
     href: "#",
-    step: "02  Strategy Development",
+    step: "PostPaddy",
   },
   {
     href: "#",
@@ -40,13 +39,19 @@ const listItems_1 = [
     heading: "Digifigs website",
     objective:
       "Digifigs Ltd needed to position itself as the most resourceful, easy to work with, and welcoming digital and growth marketing solutions provider. Given their range of services, they needed a well built online stage to showcase all these to potential clients and beneficiaries.",
-    role: "Build out the individual UI components, supervise the team to assemble them according to the design specifications, handle form submissions",
+    role: "Build out the individual UI components, supervise my team members to assemble them according to the design specifications, handle form submissions",
     link: "https://digifigs.com",
     tags: ["React", "Styled components"],
   },
   {
-    desc: "Our framework begins from the ideation stage where we identify the essential elements of your Google Search marketing and allocate the required resources for execution and determine the criteria for measuring success after implementation. ",
-    heading: "02  Strategy Development",
+    snap: postpaddy_snap,
+    bg: "#0d2b5710",
+    heading: "PostPaddy",
+    objective:
+      "Digifigs Ltd needed to position itself as the most resourceful, easy to work with, and welcoming digital and growth marketing solutions provider. Given their range of services, they needed a well built online stage to showcase all these to potential clients and beneficiaries.",
+    role: "Build out the individual UI components, supervise the team to assemble them according to the design specifications, handle form submissions",
+    link: "https://postpaddy.com",
+    tags: ["React", "Redux", "Styled components", "Sass"],
   },
   {
     desc: "Our expertise in keyword research helps to reveal the most relevant terms, words, and phrases which are vital to positioning your brand accurately to what search engine users are searching for.",
@@ -66,18 +71,12 @@ const listItems_1 = [
   },
 ];
 
-const Wrapper = styled.div`
-  width: 100vw;
-`;
-
 export default function MyWork() {
   return (
-    <Wrapper id="work" className="scrollSnapChild">
-      <SectionWrapper
-        service="Google Search Ads"
-        steps={steps_1}
-        listItems={listItems_1}
-      />
-    </Wrapper>
+    <SectionWrapper
+      service="Google Search Ads"
+      steps={steps_1}
+      listItems={listItems_1}
+    />
   );
 }

@@ -68,7 +68,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className="item">
-            <a href="/" className="textRegular">
+            <a href="/#about" className="textRegular">
               About me
             </a>
           </li>

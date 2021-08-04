@@ -20,17 +20,21 @@ const Header = styled.div`
     width: 55%;
     display: flex;
     align-items: center;
-    color: var(--primary);
-    position: relative;
+    // color: var(--primary);
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: 0;
-      height: 3px;
-      width: 20ch;
-      background-color: #deb887;
+    h1 {
+      position: relative;
+      width: max-content;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 3px;
+        width: 40%;
+        background-color: #deb887;
+      }
     }
 
     &.mb {
@@ -125,7 +129,7 @@ const Summary = styled.div`
     margin-bottom: 4.8rem;
 
     img {
-      height: 90%;
+      width: 90%;
     }
   }
 
@@ -254,14 +258,7 @@ const handleScroll = () => {
   });
 };
 
-const SectionWrapper = ({
-  dark,
-  captionImg,
-  captionText,
-  service,
-  steps = [],
-  listItems = [],
-}) => {
+const SectionWrapper = ({ dark, captionText, steps = [], listItems = [] }) => {
   useEffect(() => {
     document.querySelector("main").addEventListener("scroll", () => {
       handleScroll();
@@ -269,7 +266,7 @@ const SectionWrapper = ({
   });
 
   return (
-    <Wrapper dark={dark} className="scrollSnapChild">
+    <Wrapper id="work" dark={dark} className="scrollSnapChild">
       <Container>
         <Content dark={dark} className="content">
           <ul className="stepNavigation">

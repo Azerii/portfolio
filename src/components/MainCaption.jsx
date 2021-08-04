@@ -57,11 +57,19 @@ const Wrapper = styled(Container)`
     }
   }
 
-  // .subCaption {
-  //   z-index: 2;
-  // }
+  .mb {
+    display: none;
+  }
 
   @media screen and (max-width: 768px) {
+    .mb {
+      display: block;
+    }
+
+    .lg {
+      display: none;
+    }
+
     padding-left: 2.4rem;
 
     .caption {
@@ -236,6 +244,89 @@ const Floater = styled.div`
   }
 `;
 
+const FloaterMb = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${bounce} 6s ease-in-out infinite alternate;
+
+  .icon {
+    width: 8rem;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 3;
+    width: 50%;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease-in-out 0.1s;
+
+    &:hover {
+      background-color: ${(props) =>
+        props.bgIndex !== null
+          ? colors__link[props.bgIndex]
+          : "var(--primary)"};
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    // border-radius: 50%;
+    // border: 1px solid var(--primary);
+    background-color: ${(props) =>
+      props.bgIndex !== null ? colors[props.bgIndex] : "var(--primary)"};
+    z-index: 0;
+  }
+
+  &.size-1 {
+    top: -10%;
+    right: 10%;
+    width: 80%;
+    aspect-ratio: 1/1;
+    animation-delay: -2666ms;
+  }
+
+  &.size-2 {
+    top: 25%;
+    left: -10%;
+    width: 60%;
+    aspect-ratio: 1/1;
+    animation-delay: -1666ms;
+  }
+
+  &.size-3 {
+    top: 40%;
+    right: 0;
+    width: 50%;
+    aspect-ratio: 1/1;
+    animation-delay: -3000ms;
+  }
+
+  &.size-4 {
+    bottom: 5%;
+    left: 30%;
+    width: 30%;
+    aspect-ratio: 1/1;
+    animation-delay: -566ms;
+  }
+
+  &.size-5 {
+    top: 10%;
+    left: 15%;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+  }
+`;
+
 export default function MainCaption() {
   return (
     <Wrapper className="scrollSnapChild">
@@ -250,7 +341,12 @@ export default function MainCaption() {
 
       <div className="floatersWrapper">
         <Floater className="size-1" bgIndex={"github"}>
-          <a href="https://github.com/Azerii" className="link">
+          <a
+            href="https://github.com/Azerii"
+            className="link"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={github_octocat} alt="github" className="icon" />
           </a>
         </Floater>
@@ -258,23 +354,36 @@ export default function MainCaption() {
           <a
             href="https://www.linkedin.com/in/odinaka-ezennia-5a4870177/"
             className="link"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <img src={linkedin_logo} alt="linkedin" className="icon" />
           </a>
         </Floater>
         <Floater className="size-4" bgIndex={"gmail"}>
-          <a href="mailto:ogidi58@gmail.com" className="link">
+          <a
+            href="mailto:ogidi58@gmail.com"
+            className="link"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={gmail_logo} alt="gmail" className="icon" />
           </a>
         </Floater>
         <Floater className="size-3" bgIndex={"twitter"}>
-          <a href="/" className="link">
+          <a
+            href="/"
+            className="link"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={twitter_logo} alt="twitter" className="icon" />
           </a>
         </Floater>
-        {/* <Floater className="size-5" bgIndex={4}>
-          <img src={github_octocat} alt="react" className="icon" />
-        </Floater> */}
+        <FloaterMb className="size-1 mb" bgIndex={"github"} />
+        <FloaterMb className="size-2 mb" bgIndex={"linkedin"} />
+        <FloaterMb className="size-4 mb" bgIndex={"gmail"} />
+        <FloaterMb className="size-3 mb" bgIndex={"twitter"} />
       </div>
     </Wrapper>
   );

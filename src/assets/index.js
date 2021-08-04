@@ -8,9 +8,11 @@ import gmail_logo from "./gmail_logo.svg";
 import twitter_logo from "./twitter_logo.svg";
 import arrow_right from "./arrow_right.svg";
 import globe from "./globe.svg";
+import memoji from "./memoji.svg";
 
 // snaps
 import digifigs_snap from "./snaps/digifigs_snap.png";
+import postpaddy_snap from "./snaps/postpaddy_snap.png";
 
 export {
   express_logo,
@@ -24,4 +26,6 @@ export {
   arrow_right,
   globe,
   digifigs_snap,
+  postpaddy_snap,
+  memoji,
 };
