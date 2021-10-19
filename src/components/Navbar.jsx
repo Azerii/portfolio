@@ -59,12 +59,12 @@ export default function Navbar() {
     <Wrapper>
       <Container className="row space-between">
         <Brand href="/" className="textRegular">
-          Azerii
+          ALABI
         </Brand>
         <Menu>
           <li className="item">
             <a href="/#work" className="textRegular">
-              Work
+              Projects Worked on
             </a>
           </li>
           <li className="item">

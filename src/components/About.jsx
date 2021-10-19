@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { memoji } from "../assets";
 import Container from "./Container";
 
 const slide = keyframes`
@@ -7,15 +6,15 @@ const slide = keyframes`
     transform: translateX(0);
   }
 
-  25% {
-    transform: translateX(5rem);
+  40% {
+    transform: translateX(3rem);
   }
 
-  50% {
+  60% {
     transform: translateX(0);
   }
 
-  75% {
+  80% {
     transform: translateX(5rem);
   }
 
@@ -29,12 +28,13 @@ const Wrapper = styled(Container)`
   width: 100vw;
   padding-top: 7.2rem;
   padding-bottom: 7.2rem;
-  background-color: #2a446b05;
+  background-color: #deb887;
   position: relative;
   overflow: hidden;
 
   .heading {
     width: max-content;
+    text-shadow: 1px 1px 1px #deb887 ;
     position: relative;
     z-index: 1;
 
@@ -56,11 +56,11 @@ const Wrapper = styled(Container)`
     right: -5%;
 
     .one {
-      color: #000000;
+      color: #deb887;
     }
 
     .two {
-      color: #2a446b;
+      color: #000000;
     }
 
     .three {
@@ -95,16 +95,16 @@ const Shade = styled.div`
   // width: 30%;
   height: 100%;
   aspect-ratio: 1/1;
-  background-color: #2a446b10;
+  background-color: #fff;
   position: absolute;
   top: 0;
   animation: ${slide} 10s ease-in-out infinite alternate;
   z-index: 0;
 
   &.letterO {
-    background-color: #00000010;
+    background-color: #fff;
     border-radius: 100%;
-    left: -20%;
+    left: -5%;
     animation-delay: -2666ms;
   }
 
@@ -112,12 +112,12 @@ const Shade = styled.div`
     background-color: #2a446b10;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    left: 25%;
-    animation-delay: -1666ms;
+    left: 35%;
+    animation-delay: 1600ms;
   }
 
   &.letterI {
-    background-color: #deb88710;
+    background-color: #fff;
     left: unset;
     right: -20%;
     animation-delay: -666ms;
@@ -176,9 +176,9 @@ export default function About() {
     <Wrapper id="about" className="scrollSnapChild">
       <h1 className="heading displayLarge">About me</h1>
       <h4 className="textMedium highlights mb">
-        <span className="one">Problem solving</span>
+        <span className="one">Reserching</span>
         &nbsp;•&nbsp;
-        <span className="two">Creativity</span>
+        <span className="two">Problem solving</span>
         &nbsp;•&nbsp;
         <span className="three">Passion</span>
       </h4>
@@ -188,32 +188,28 @@ export default function About() {
       <Content>
         <div className="textWrapper">
           <h4 className="displayRegular">
-            I am a Frontend Engineer based in Oyo, Nigeria.
+            I am a Frontend Engineer based in Lagos, Nigeria.
           </h4>
           <p className="textMedium">
-            I love that I can build out amazing user interfaces created by
-            talented designers. I have been able to pick up some design skills
-            myself 😌.
+            As a self taught front end developer, being able to build out amazing user interfaces created by
+            talented designers is a great feeling. I have been able to learn and implement some design skills
+            myself 😁.
             <br />
             <br />
-            I enjoy solving problems. It's interesting being able to make
+            I enjoy solving problems and researching. It's interesting being able to make
             awesome designs come to life with the right balance of utitlity and
             aesthetics.
             <br />
             <br />
-            When I'm not coding, debugging or staring at my screen for hours 😂,
-            you'll find me in the kitchen whipping up something zesty 🤤,
-            reading or playing video games 😁.
+            When I'm not coding, debugging or staring at my screen for hours 😁,
+            i will be seen dancing to hit songs and sweating in the process😂.
           </p>
-        </div>
-        <div className="imgWrapper">
-          <img src={memoji} alt="Odi" />
         </div>
       </Content>
       <h4 className="textMedium highlights lg">
-        <span className="one">Problem solving</span>
+        <span className="one">Reserching</span>
         &nbsp;•&nbsp;
-        <span className="two">Creativity</span>
+        <span className="two">Problem solving</span>
         &nbsp;•&nbsp;
         <span className="three">Passion</span>
       </h4>

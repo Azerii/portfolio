@@ -13,6 +13,7 @@ import memoji from "./memoji.svg";
 // snaps
 import digifigs_snap from "./snaps/digifigs_snap.png";
 import postpaddy_snap from "./snaps/postpaddy_snap.png";
+import blunch_snap from "./snaps/blunch_snap.png";
 
 export {
   express_logo,
@@ -27,5 +28,6 @@ export {
   globe,
   digifigs_snap,
   postpaddy_snap,
+  blunch_snap,
   memoji,
 };

@@ -272,7 +272,7 @@ const SectionWrapper = ({ dark, captionText, steps = [], listItems = [] }) => {
           <ul className="stepNavigation">
             <Header>
               <div className="captionText lg">
-                <h1 className="displayLarge">{captionText ?? "My work"}</h1>
+                <h1 className="displayLarge">{captionText ?? "Projets"}</h1>
               </div>
             </Header>
             {steps.map((item) => (
@@ -293,7 +293,7 @@ const SectionWrapper = ({ dark, captionText, steps = [], listItems = [] }) => {
           <div className="contentList">
             <Header>
               <div className="captionText mb">
-                <h1 className="displayLarge">{captionText ?? "My work"}</h1>
+                <h1 className="displayLarge">{captionText ?? "Projets"}</h1>
               </div>
             </Header>
             {listItems.map((item) => (

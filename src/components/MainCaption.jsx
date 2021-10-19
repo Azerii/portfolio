@@ -16,8 +16,8 @@ import Container from "./Container";
 // ];
 
 const colors = {
-  github: "#04060A10",
-  twitter: "#52A7E710",
+  github: "#52A7E710",
+  twitter: "#04060A10 ",
   linkedin: "#52A7E710",
   gmail: "#E6433610",
 };
@@ -47,8 +47,16 @@ const Wrapper = styled(Container)`
   justify-content: center;
   padding-left: 14.4rem;
 
+  .brandName{
+    padding-bottom:2rem;
+    font-size: 4rem;
+  }
+
   .caption {
     font-size: 10.8rem;
+    color: #deb887;
+    text-shadow: 2px 2px 2px #8a8c9298 ;
+    padding: 3rem 0 0 10rem;
     line-height: 12.8rem;
     // z-index: 2;
 
@@ -92,15 +100,15 @@ const bounce = keyframes`
     transform: translateY(0);
   }
 
-  25% {
+  20% {
     transform: translateY(1.5rem);
   }
 
-  50% {
+  60% {
     transform: translateY(0);
   }
 
-  75% {
+  85% {
     transform: translateY(-1.5rem);
   }
 
@@ -134,7 +142,7 @@ const Floater = styled.div`
       background-color: ${(props) =>
         props.bgIndex !== null
           ? colors__link[props.bgIndex]
-          : "var(--primary)"};
+          : "var(--secondary)"};
     }
   }
 
@@ -147,40 +155,40 @@ const Floater = styled.div`
     // border-radius: 50%;
     // border: 1px solid var(--primary);
     background-color: ${(props) =>
-      props.bgIndex !== null ? colors[props.bgIndex] : "var(--primary)"};
+      props.bgIndex !== null ? colors[props.bgIndex] : "var(--secondary)"};
     z-index: 0;
   }
 
   &.size-1 {
-    top: -20%;
-    right: 10%;
+    top: -10%;
+    left: 15%;
     width: 70rem;
-    height: 80rem;
-    animation-delay: -2666ms;
+    height: 160rem;
+    animation-delay: -6666ms;
   }
 
   &.size-2 {
-    top: 25%;
-    left: -10%;
+    top: 40%;
+    right: -4%;
     width: 60rem;
     height: 60rem;
-    animation-delay: -1666ms;
+    animation-delay: -3666ms;
   }
 
   &.size-3 {
     top: 40%;
-    right: 0;
+    left: -5%;
     width: 40rem;
     height: 40rem;
-    animation-delay: -3000ms;
+    animation-delay: -5000ms;
   }
 
   &.size-4 {
-    bottom: 5%;
-    left: 30%;
+    bottom: 50%;
+    right: 20%;
     width: 30rem;
     height: 30rem;
-    animation-delay: -566ms;
+    animation-delay: -966ms;
   }
 
   &.size-5 {
@@ -263,7 +271,7 @@ const FloaterMb = styled.div`
     z-index: 3;
     width: 50%;
     aspect-ratio: 1/1;
-    transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.6s ease-in-out 0.3s;
 
     &:hover {
       background-color: ${(props) =>
@@ -291,7 +299,7 @@ const FloaterMb = styled.div`
     right: 10%;
     width: 80%;
     aspect-ratio: 1/1;
-    animation-delay: -2666ms;
+    animation-delay: -266ms;
   }
 
   &.size-2 {
@@ -299,7 +307,7 @@ const FloaterMb = styled.div`
     left: -10%;
     width: 60%;
     aspect-ratio: 1/1;
-    animation-delay: -1666ms;
+    animation-delay: -166ms;
   }
 
   &.size-3 {
@@ -307,7 +315,7 @@ const FloaterMb = styled.div`
     right: 0;
     width: 50%;
     aspect-ratio: 1/1;
-    animation-delay: -3000ms;
+    animation-delay: -300ms;
   }
 
   &.size-4 {
@@ -315,7 +323,7 @@ const FloaterMb = styled.div`
     left: 30%;
     width: 30%;
     aspect-ratio: 1/1;
-    animation-delay: -566ms;
+    animation-delay: -56ms;
   }
 
   &.size-5 {
@@ -330,7 +338,7 @@ const FloaterMb = styled.div`
 export default function MainCaption() {
   return (
     <Wrapper className="scrollSnapChild">
-      <h4 className="textLargeBold">Odinaka Ezennia</h4>
+      <h1 className="textLargeBold brandName">Oluwapelumi Alabi</h1>
       <h1 className="displayLarge caption">
         <span>Front</span>
         &nbsp;
@@ -340,9 +348,9 @@ export default function MainCaption() {
       </h1>
 
       <div className="floatersWrapper">
-        <Floater className="size-1" bgIndex={"github"}>
+        <Floater className="size-1" >
           <a
-            href="https://github.com/Azerii"
+            href="https://github.com/pelumi-codes"
             className="link"
             target="_blank"
             rel="noreferrer noopener"
@@ -350,19 +358,10 @@ export default function MainCaption() {
             <img src={github_octocat} alt="github" className="icon" />
           </a>
         </Floater>
-        <Floater className="size-2" bgIndex={"linkedin"}>
+        
+        <Floater className="size-4" >
           <a
-            href="https://www.linkedin.com/in/odinaka-ezennia-5a4870177/"
-            className="link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <img src={linkedin_logo} alt="linkedin" className="icon" />
-          </a>
-        </Floater>
-        <Floater className="size-4" bgIndex={"gmail"}>
-          <a
-            href="mailto:ogidi58@gmail.com"
+            href="mailto:alabideborah973@gmail.com"
             className="link"
             target="_blank"
             rel="noreferrer noopener"
@@ -370,14 +369,24 @@ export default function MainCaption() {
             <img src={gmail_logo} alt="gmail" className="icon" />
           </a>
         </Floater>
-        <Floater className="size-3" bgIndex={"twitter"}>
+        <Floater className="size-3" >
           <a
-            href="/"
+            href="https://www.twitter.com/pelumialabi_/"
             className="link"
             target="_blank"
             rel="noreferrer noopener"
           >
             <img src={twitter_logo} alt="twitter" className="icon" />
+          </a>
+        </Floater>
+        <Floater className="size-2" >
+          <a
+            href="https://www.linkedin.com/in/alabi-deborah/"
+            className="link"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <img src={linkedin_logo} alt="linkedin" className="icon" />
           </a>
         </Floater>
         <FloaterMb className="size-1 mb" bgIndex={"github"} />
